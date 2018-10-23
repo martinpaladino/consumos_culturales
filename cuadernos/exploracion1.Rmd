@@ -1,0 +1,25 @@
+---
+title: "Exploración encuesta Consumos Culturales"
+author: "Martín Paladino"
+date: "23 de octubre de 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(readr)
+
+consumos <- read_csv("https://raw.githubusercontent.com/martinpaladino/consumos_culturales/master/datos/base_consumos_culturales.csv") %>% 
+  rename(escolaridad_padre = P22_1, escolaridad_madre = P22_2) 
+
+```
+
+# Problemas: 
+
+1. Hay categorías repetidas por en algunos casos están en mayúsculas y en otros en minúsculas. 
+2. Hay demasiadas categorías. 
+
